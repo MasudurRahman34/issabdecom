@@ -17,10 +17,14 @@ class CategoryController extends Controller
     {
         $this->categoryService=$categoryService;
     }
+    public function getAll(Request $request){
+        $categories=Category::get();
+        return $this->success($categories,200);
+    }
    
     public function index()
     {
-        return 'working';
+        return view('backend.pages.category.index');
     }
 
     

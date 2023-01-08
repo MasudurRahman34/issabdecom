@@ -31,6 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 Route::post('/categories', [CategoryController::class, 'store']);
-Route::get('/categories', [CategoryController::class, 'index']);
+Route::get('/categories/index', [CategoryController::class, 'index']);
+Route::get('/categories', [CategoryController::class, 'getAll']);
 
 require __DIR__.'/auth.php';

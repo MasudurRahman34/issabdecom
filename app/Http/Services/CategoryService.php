@@ -19,10 +19,10 @@ class CategoryService{
             DB::commit();
             return $this->success($category,200);
         } catch (\Exception $e) {
-            
+                DB::rollBack();
             //$this->error($e->getMessage(),422);
             return $e->getMessage();
-            DB::rollBack();
+           
         }
 
     }
